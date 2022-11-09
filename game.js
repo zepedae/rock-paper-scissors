@@ -1,29 +1,31 @@
 function getComputerChoice(){
     const choices = ["rock", "paper", "scissors"];
-    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    const computerSelection = 
+            choices[Math.floor(Math.random() * choices.length)];
     return computerSelection;
 }
 
-
+//Play a round of rock paper scissors returning result
 function playRound(playerSelection, computerSelection){
-    const player = playerSelection.toLowerCase();
-    const comp = computerSelection.toLowerCase();
 
-    const point = 0;
+    //Convert player input to lower case for comparison
+    const lowerPlayer = playerSelection.toLowerCase();
 
-    if (player === comp) {
+    if (lowerPlayer === comp) {
         return("It's a tie!");
     }
-    else if (player === "rock" && comp === "scissors" || player === "scissors" && comp === "paper" || player === "paper" && comp === "rock") {
-        return(`You win! Congrats, ${player} beats ${comp}.`)
+    else if (lowerPlayer === "rock" && lowerComputer === "scissors" ||
+            lowerPlayer === "scissors" && lowerComputer === "paper" ||
+            lowerPlayer === "paper" && lowerComputer=== "rock") {
+        return(`You win! Congrats, ${lowerPlayer} beats ${lowerComputer}.`)
     }
     else {
-        return(`You lose! Sorry, ${comp} beats ${player}.`)
+        return(`You lose! Sorry, ${lowerComputer} beats ${lowerPlayer}.`)
     }
 
 }
 
-
+//Play 5 rounds of rock paper scissors and return the overall result
 function game(){
     let score = 0;
 
