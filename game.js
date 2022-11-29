@@ -12,15 +12,15 @@ function playRound(playerSelection, computerSelection){
     const lowerPlayer = playerSelection;
 
     if (lowerPlayer === computerSelection) {
-        return("It's a tie!");
+        return("it's a tie!");
     }
     else if (lowerPlayer === "rock" && computerSelection === "scissors" ||
             lowerPlayer === "scissors" && computerSelection === "paper" ||
             lowerPlayer === "paper" && computerSelection=== "rock") {
-        return(`You win! Congrats, ${lowerPlayer} beats ${computerSelection}.`)
+        return(`you win! congrats, ${lowerPlayer} beats ${computerSelection}.`)
     }
     else {
-        return(`You lose! Sorry, ${computerSelection} beats ${lowerPlayer}.`)
+        return(`you lose! sorry, ${computerSelection} beats ${lowerPlayer}.`)
     }
 
 }
@@ -31,26 +31,26 @@ function game(playerSelection, computerSelection){
 
     const result = playRound(playerSelection, computerSelection);
     
-    if (result.includes("win")){
+    if (result.includes('win')){
         playerScore++;
+        document.getElementById('playerScore').textContent = `player score: ${playerScore}`;
 
         if(playerScore !== 5){
             document.getElementById('outcome').textContent=result;
-            document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
         } else {
-            document.getElementById('outcome').textContent="Congrats!!!! You take the game!";
-            document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
+            document.getElementById('outcome').textContent= 'congrats!!!! you take the game!';
         }
-    } else {
+    } else if (result.includes('lose')){
         computerScore++;
-
+        document.getElementById('compScore').textContent = `computer score: ${computerScore}`;
+        
         if(computerScore !== 5){
             document.getElementById('outcome').textContent=result;
-            document.getElementById('compScore').textContent = `Computer Score: ${computerScore}`;
         } else {
-            document.getElementById('outcome').textContent='Major bummer. You lose the game.';
-            document.getElementById('compScore').textContent = `Computer Score: ${computerScore}`;
+            document.getElementById('outcome').textContent='bummer. you lose the game.';    
         }
+    } else {  
+        document.getElementById('outcome').textContent=result;
     }
 }
 
@@ -60,7 +60,7 @@ const buttons = document.querySelectorAll('button');
 let playerScore = 0;
 let computerScore = 0;
 
-buttons.forEach(button => button.addEventListener('click', (e) => {
+buttons.forEach(button => button.addEventListener('click', () => {
     if (playerScore < 5 && computerScore < 5){
         const playerSelection = button.getAttribute('id');
         const computerSelection = getComputerChoice();

@@ -1,0 +1,47 @@
+body {
+    background-color: peachpuff;
+}
+#content {
+    display: flex;
+    flex-direction: column;
+    font: 24px "Verdana", sans-serif;
+    color: coral;
+    align-items: center;
+}
+
+#outcome {
+    font-size: 2em;
+    margin-top: .5em;
+}
+
+#choose {
+    display: flex;
+    margin-top: .5em;
+}
+
+button {
+    font-size: 2em;
+    margin: .25em;
+    padding: 0px 0px;
+    color: darkkhaki;
+    background-color: thistle;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+#scores {
+    display: flex;
+
+}
+
+h1 {
+    margin: .2em;
+}
